@@ -69,7 +69,7 @@ def fetch_results_page(url, writer):
             row.append(traverse(school, field))
 
         if DETAILED:
-            resp = requests.get('https://www.usnews.com/education/best-global-universities' + traverse(school, 'institution.urlName') + '-'
+            resp = requests.get('https://www.usnews.com/best-global-universities/' + traverse(school, 'institution.urlName') + '-'
                                 + traverse(school, 'institution.primaryKey'), headers=HEADERS)
             soup = BeautifulSoup(resp.text, 'html.parser')
             for field in DETAIL_FIELDS:
@@ -91,8 +91,8 @@ def fetch_results_page(url, writer):
         print('Done!')
 
 
-with open('global_data-detailed.csv' if DETAILED else 'global_data.csv', 'w') as data_file:
+with open('data-detailed.csv' if DETAILED else 'data.csv', 'w') as data_file:
     data_writer = csv.writer(data_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     data_writer.writerow(FIELDS + (DETAIL_FIELDS if DETAILED else []))
-    fetch_results_page('https://www.usnews.com/education/best-global-universities/api/search?_sort=schoolName&_sortDirection=asc&_page=1',
+    fetch_results_page('https://www.usnews.com/best-global-universities/api/search?_sort=schoolName&_sortDirection=asc&_page=1',
                        data_writer)
