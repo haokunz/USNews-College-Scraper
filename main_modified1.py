@@ -14,23 +14,9 @@ FIELDS = [
     'institution.region',
     'institution.isPublic',
     'institution.institutionalControl',
-    'institution.primaryPhotoCardThumb',
     'ranking.displayRank',
     'ranking.sortRank',
-    'ranking.isTied',
-    'searchData.actAvg.rawValue',
-    'searchData.percentReceivingAid.rawValue',
-    'searchData.acceptanceRate.rawValue',
-    'searchData.tuition.rawValue',
-    'searchData.hsGpaAvg.rawValue',
-    'searchData.engineeringRepScore.rawValue',
-    'searchData.parentRank.rawValue',
-    'searchData.enrollment.rawValue',
-    'searchData.businessRepScore.rawValue',
-    'searchData.satAvg.rawValue',
-    'searchData.costAfterAid.rawValue',
-    'searchData.testAvgs.displayValue.0.value',
-    'searchData.testAvgs.displayValue.1.value'
+    'ranking.isTied'
 ]
 
 DETAILED = False
